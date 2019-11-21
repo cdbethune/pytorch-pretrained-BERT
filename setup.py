@@ -37,7 +37,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="pytorch_pretrained_bert",
-    version="0.4.1",
+    version="0.4.2",
     author="Thomas Wolf, Victor Sanh, Tim Rault, Google AI Language Team Authors",
     author_email="thomas@huggingface.co",
     description="PyTorch version of Google AI BERT model with script to load Google pre-trained models",
@@ -50,9 +50,10 @@ setup(
                                     "tests.*", "tests"]),
     install_requires=['torch>=0.4.1',
                       'numpy',
-                      'boto3',
                       'requests',
-                      'tqdm'],
+                      'tqdm',
+                      'botocore<=1.13.8',
+                      'boto3<=1.10.8'],
     scripts=["bin/pytorch_pretrained_bert"],
     python_requires='>=3.5.0',
     tests_require=['pytest'],
